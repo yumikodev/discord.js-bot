@@ -1,17 +1,22 @@
-const { Client, Intents, Collection } = require("discord.js");
+const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const client = new Client({
-  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+  ],
 });
 const config = require("./config/config");
+const handler = require("./handler/main");
 module.exports = client;
 
-/*-------- Global variables --------*/
+// Global variables
 client.commands = new Collection();
 client.slashs = new Collection();
-client.config = config;
 
-/*-------- Handlers --------*/
-require("./handler/index")(client);
+// Handlers
+handler(client);
 
-/*-------- Client Login --------*/
-client.login(client.config.token);
+// Client Login
+client.login(config.token);

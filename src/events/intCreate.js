@@ -1,7 +1,9 @@
-/* Interaction create */
-module.exports = {
-  name: "run",
-  async run(client, interaction) {
+const EventBuilder = require("../components/EventBuilder");
+
+// Interaction create
+module.exports = new EventBuilder({
+  event: "interactionCreate",
+  async listener(client, interaction) {
     if (!interaction.isCommand()) return;
 
     const command = client.slashs.get(interaction.commandName);
@@ -13,7 +15,7 @@ module.exports = {
       });
 
     try {
-      await command.execute(client, interaction);
+      await command.run(client, interaction);
     } catch (err) {
       console.error(err);
 
@@ -23,4 +25,4 @@ module.exports = {
       });
     }
   },
-};
+});
