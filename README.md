@@ -1,6 +1,6 @@
 # discord.js-bot
 
-Creado por [Yasu Yumiko#5285](https://yumiko0828.ml)
+Creado por [Yasu Yumiko#5285](https://yasuyumiko.ml)
 
 ## Sobre
 
@@ -28,6 +28,6 @@ Este es un bot para Discord, desarrollado con [Node.js](https://nodejs.org) y [D
 - [Twitter](https://twitter.com/yumiko0828_)
 - [Instagram](https://www.instagram.com/yumiko0828_)
 - [npm](https://npmjs.com/~yumiko0828)
-- [Website](https://yumiko0828.ml)
+- [Website](https://yasuyumiko.ml)
 
 ## Gracias por usar esto.
